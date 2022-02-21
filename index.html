@@ -14,6 +14,18 @@
         }
       });
     </script> -->
+    <script>
+      AFRAME.registerComponent("playVideo", {
+        init: function() {
+          this.el.addEventListener("materialtextureloaded", e => {
+            var videoEl = this.el.getAttribute('material').src;
+            if (!videoEl) { return; }
+            this.el.object3D.visible = true;
+            videoEl.play();
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <a-scene embedded arjs>
@@ -27,13 +39,18 @@
           material="src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173; transparent: true;"
           foo
         ></a-plane>       -->
-      <a-entity
+      <!-- <a-entity
         material="shader: transparent-video; src: #testVideo"
         geometry="primitive: plane;
                   width: 1;
                   height: 1.8"
-        position="0 1 -2">
-      </a-entity>
+        position="0 1 0">
+      </a-entity> -->
+      <a-plane
+          position="0 1 0"
+          material="shader: transparent-video; src: #testVideo"
+          playVideo
+        ></a-plane>      
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
