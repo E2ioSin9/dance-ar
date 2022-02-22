@@ -30,15 +30,16 @@
   <body>
     <a-scene embedded arjs>
       <a-assets>
-        <video id="testVideo" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
+        <video id="alpha1" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
+        <video id="alpha2" loop="true" src="https://arjs-cors-proxy.herokuapp.com/https://ataylor32.github.io/demo-html5-transparent-video/video.webm" autoplay muted></video>
       </a-assets>
       <a-marker preset='hiro'>
         <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box>
-        <a-plane
+        <!-- <a-plane
           position="1 1 0"
           material="src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173; transparent: true;"
           foo
-        ></a-plane>      
+        ></a-plane>       -->
       <!-- <a-entity
         material="shader: transparent-video; src: #testVideo"
         geometry="primitive: plane;
@@ -46,18 +47,44 @@
                   height: 1.8"
         position="0 1 0">
       </a-entity> -->
-      <!-- <a-plane
+      <a-plane
           position="0 1 0"
-          material="shader: transparent-video; src: #testVideo"
-          playVideo
-        ></a-plane>       -->
-        <a-plane
-          position="0 1 0"
-          material="shader: transparent-video; src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173;"
-        ></a-plane>      
+          material="shader: transparent-video; src: #alpha1"
+        ></a-plane>
+      <a-plane
+        position="1 1 0"
+        material="shader: transparent-video; src: #alpha2"
+      ></a-plane>          
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script type="text/javascript">
+      // const sceneEl = document.querySelector("a-scene");
+      // sceneEl.addEventListener("loaded", () => {
+      //   sceneEl.camera = new THREE.PerspectiveCamera();
+      // });
+  
+      // let nftElem = document.querySelector("a-nft");
+  
+      // nftElem.addEventListener("markerFound", (e) => {
+      //   document.getElementById("scannerContainer").style.display = "none";
+      //   document.getElementById("imgContainer").style.display = "none";
+      //   console.log("found");
+      // });
+  
+      // nftElem.addEventListener("markerLost", (e) => {
+      //   document.getElementById("scannerContainer").style.display = "";
+      //   document.getElementById("imgContainer").style.display = "";
+      //   console.log("lost");
+      // }); 
+      document.querySelector('a-scene').addEventListener('loaded', function () {                       
+          document.getElementById('vid2').play();
+      document.getElementById('alpha2').play();                                                                     
+      console.log("loaded");
+        })
+  
+    </script>
 
     <!-- <a-scene>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
