@@ -28,7 +28,7 @@
     </script> -->
   </head>
   <body>
-    <a-scene embedded arjs>
+    <a-scene embedded arjs artoolkit='sourceType: webcam;'>
       <a-assets>
         <video id="alpha1" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
         <video id="alpha2" loop="true" src="https://arjs-cors-proxy.herokuapp.com/https://ataylor32.github.io/demo-html5-transparent-video/video.webm" autoplay muted></video>
@@ -48,11 +48,11 @@
         position="0 1 0">
       </a-entity> -->
       <a-plane
-          position="0 1 0"
+          position="0 0.5 0"
           material="shader: transparent-video; src: #alpha1"
         ></a-plane>
       <a-plane
-        position="1 1 0"
+        position="1 0.5 0"
         material="shader: transparent-video; src: #alpha2"
       ></a-plane>          
       </a-marker>
