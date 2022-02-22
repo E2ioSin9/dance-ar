@@ -37,6 +37,7 @@
         <video id="alpha3" loop="true" src="./asset/AlphaTestVideo.webm" autoplay muted playsinline webkit-playsinline></video>
         <video id="greenScreen" src="./asset/example.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
         <video id="greenScreen2" src="https://cdn.glitch.com/386b4b78-f38f-4631-93b4-9ea2a834b6bd/greenScreenTest.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
+        <video id="greenScreen3" src="./asset/greenScreenTest.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
       </a-assets>
       <a-marker id = "marker1" preset='hiro'>
         <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box>
@@ -52,37 +53,52 @@
                   height: 1.8"
         position="0 1 0">
       </a-entity> -->
-        <a-plane
+
+        <!-- <a-plane
             position="0 0.5 0"
             material="shader: transparent-video; src: #alpha1"
         ></a-plane>
         <a-plane
           position="1 0.5 0"
           material="shader: transparent-video; src: #alpha2"
-        ></a-plane>     
+        ></a-plane>      -->
         <a-plane
             position="-1 0.5 0"
             material="shader: chromakey; src: #greenScreen; color: 0.1 0.9 0.2" 
-            height="1.9" width="1.08"          
-        ></a-plane>
-        <a-plane
-          position="-2 0.5 0"
-          width="1.9"
-          height="1.08"
-          material="shader: chromakey; src: #greenScreen2; color: 0.1 0.9 0.2" 
+            height="1.92" width="1.08"          
         ></a-plane>
         <a-plane
           position="-3 0.5 0"
+          width="1.92"
+          height="1.08"
+          material="shader: chromakey; src: #greenScreen2; color: 0.1 0.9 0.2" 
+        ></a-plane>       
+        <!-- <a-plane
+          position="-3 0.5 0"
           material="shader: transparent-video; src: #alpha3" 
-        ></a-plane>
+        ></a-plane> -->
+
+        <a-plane
+          position="-5 0.5 0"
+          width="1.92"
+          height="1.08"
+          material="shader: chromakey; src: #greenScreen3; color: 0.1 0.9 0.2" 
+        ></a-plane> 
+
       </a-marker>
 
       <a-marker id = "marker2" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
         <a-plane
           position="0 0.5 0"
-          width="1.9"
+          width="1.92"
           height="1.08"
           material="shader: chromakey; src: #greenScreen2;" 
+        ></a-plane>
+        <a-plane
+          position="-1 0.5 0"
+          width="1.92"
+          height="1.08"
+          material="shader: chromakey; src: #greenScreen3; color: 0.1 0.9 0.2" 
         ></a-plane>
       </a-marker>
         
@@ -116,24 +132,23 @@
       // })
 
       let markerElem = document.getElementById("marker1");
-
       markerElem.addEventListener("markerFound", (e) => {
-        document.getElementById('alpha1').play();
-        document.getElementById('alpha2').play();
+        // document.getElementById('alpha1').play();
+        // document.getElementById('alpha2').play();
         document.getElementById('greenScreen').play();
         document.getElementById('greenScreen2').play();
+        document.getElementById('greenScreen3').play();
         console.log("found");
       });
-  
       markerElem.addEventListener("markerLost", (e) => {      
         console.log("lost");
       }); 
 
 
       let marker2Elem = document.getElementById("marker2");
-
       marker2Elem.addEventListener("markerFound", (e) => {
         document.getElementById('greenScreen2').play();
+        document.getElementById('greenScreen3').play();
         console.log("found");
       });
   
