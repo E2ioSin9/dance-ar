@@ -28,10 +28,10 @@
     </script> -->
   </head>
   <body>
-    <a-scene embedded arjs artoolkit='sourceType: webcam;'>
+    <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
       <a-assets>
-        <video id="alpha1" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
-        <video id="alpha2" loop="true" src="https://arjs-cors-proxy.herokuapp.com/https://ataylor32.github.io/demo-html5-transparent-video/video.webm" autoplay muted></video>
+        <video id="alpha1" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true" playsinline webkit-playsinline></video>
+        <video id="alpha2" loop="true" src="https://arjs-cors-proxy.herokuapp.com/https://ataylor32.github.io/demo-html5-transparent-video/video.webm" autoplay muted playsinline webkit-playsinline></video>
       </a-assets>
       <a-marker id = "marker1" preset='hiro'>
         <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box>
