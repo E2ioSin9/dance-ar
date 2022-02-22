@@ -33,12 +33,12 @@
         <video id="testVideo" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
       </a-assets>
       <a-marker preset='hiro'>
-        <!-- <a-box position='0 1 0' material='opacity: 0.5; color: #F70087;'></a-box> -->
-        <!-- <a-plane
-          position="0 1 0"
+        <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box>
+        <a-plane
+          position="1 1 0"
           material="src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173; transparent: true;"
           foo
-        ></a-plane>       -->
+        ></a-plane>      
       <!-- <a-entity
         material="shader: transparent-video; src: #testVideo"
         geometry="primitive: plane;
@@ -53,7 +53,7 @@
         ></a-plane>       -->
         <a-plane
           position="0 1 0"
-          material="shader: transparent-video; src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173; transparent: true;"
+          material="shader: transparent-video; src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173;"
         ></a-plane>      
       </a-marker>
       <a-entity camera></a-entity>
