@@ -68,41 +68,43 @@
         position="0 1 0">
       </a-entity> -->
         <a-plane
-          scale="5 5 5"
-          position="0 100 0"
-          material="shader: transparent-video; src: #alpha1"
+            position="0 0.5 0"
+            material="shader: transparent-video; src: #alpha1"
         ></a-plane>
         <a-plane
-          scale="5 5 5"
-          position="100 100 0"
+          position="1 0.5 0"
           material="shader: transparent-video; src: #alpha2"
         ></a-plane>     
         <a-plane
-            scale="5 5 5"
-            position="-100 100 0"
+            position="-1 0.5 0"
             material="shader: chromakey; src: #greenScreen; color: 0.1 0.9 0.2" 
             height="1.92" width="1.08"          
         ></a-plane>
         <a-plane
-          scale="5 5 5"
-          position="-300 100 0"
+          position="-3 0.5 0"
           width="1.92"
           height="1.08"
           material="shader: chromakey; src: #greenScreen2; color: 0.1 0.9 0.2" 
         ></a-plane>       
         
-        <!-- <a-plane
+        <a-plane
           position="-3 0.5 0"
           material="shader: transparent-video; src: #alpha3" 
-        ></a-plane> -->
+        ></a-plane>
 
         <a-plane
-          scale="5 5 5"
-          position="-400 100 0"
+          position="-5 0.5 0"
           width="1.92"
           height="1.08"
           material="shader: chromakey; src: #greenScreen3; color: 0.1 0.9 0.2" 
         ></a-plane> 
+
+        <a-entity
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+              scale="5 5 5"
+              position="100 100 0"
+          >
+          </a-entity>
       <!-- </a-marker> -->
       </a-nft>
 
