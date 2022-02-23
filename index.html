@@ -48,13 +48,13 @@
       <a-nft
         id = "marker1"
         type="nft"
-        url="asset/imageTracking/pinball"
+        url="./asset/imageTracking/pinball"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
       >
-        <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box>
+        <!-- <a-box position='0 1 -2' material='opacity: 0.5; color: #F70087;'></a-box> -->
         <!-- <a-plane
           position="1 1 0"
           material="src: https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173; transparent: true;"
@@ -67,7 +67,8 @@
                   height: 1.8"
         position="0 1 0">
       </a-entity> -->
-        <a-plane
+      
+        <!-- <a-plane
             position="0 0.5 0"
             material="shader: transparent-video; src: #alpha1"
         ></a-plane>
@@ -97,7 +98,7 @@
           width="1.92"
           height="1.08"
           material="shader: chromakey; src: #greenScreen3; color: 0.1 0.9 0.2" 
-        ></a-plane> 
+        ></a-plane>  -->
 
         <a-entity
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
