@@ -143,8 +143,8 @@
 
       let markerElem = document.getElementById("marker1");
       markerElem.addEventListener("markerFound", (e) => {
-        // document.getElementById('alpha1').play();
-        // document.getElementById('alpha2').play();
+        document.getElementById('alpha1').play();
+        document.getElementById('alpha2').play();
         document.getElementById('greenScreen').play();
         document.getElementById('greenScreen2').play();
         document.getElementById('greenScreen3').play();
@@ -155,12 +155,12 @@
       }); 
 
 
-      let marker2Elem = document.getElementById("marker2");
-      marker2Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('greenScreen2').play();
-        document.getElementById('greenScreen3').play();
-        console.log("found");
-      });
+      // let marker2Elem = document.getElementById("marker2");
+      // marker2Elem.addEventListener("markerFound", (e) => {
+      //   document.getElementById('greenScreen2').play();
+      //   document.getElementById('greenScreen3').play();
+      //   console.log("found");
+      // });
   
     </script>
 
