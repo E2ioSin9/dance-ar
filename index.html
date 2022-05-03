@@ -113,6 +113,18 @@
             width="1.92"
             height="1.08"         
         ></a-plane>
+
+        <a-plane
+            rotation="-90 0 0"
+            position="1 0.2 0"
+            material="shader: transparent-video; src: #alpha1"
+        ></a-plane>
+        <a-plane
+          rotation="-90 0 0"
+          position="-1 0.2 0"
+          material="shader: transparent-video; src: #alpha2"
+        ></a-plane>
+
       </a-marker>    
 
       <!-- <a-nft
@@ -180,9 +192,11 @@
 
       let marker2Elem = document.getElementById("marker2");
       marker2Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('greenScreen2').play();
+        //document.getElementById('greenScreen2').play();
         document.getElementById('greenScreen3').play();
-        document.getElementById('greenScreen').play();
+        //document.getElementById('greenScreen').play();
+        document.getElementById('alpha1').play();
+        document.getElementById('alpha2').play();
         console.log("found");
       });
   
