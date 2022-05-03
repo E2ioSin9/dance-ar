@@ -88,7 +88,7 @@
         ></a-plane> 
       </a-marker> -->
 
-      <!-- <a-marker id ="marker2" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
+      <a-marker id ="marker2" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
         <a-plane
           position="0 0.5 0"
           width="1.92"
@@ -106,9 +106,15 @@
             material="shader: chromakey; src: #greenScreen; color: 0.1 0.9 0.2" 
             height="1.92" width="1.08"          
         ></a-plane>
-      </a-marker>     -->
+        <a-plane
+            rotation="90 0 0"
+            position="1 0.5 0"
+            material="shader: chromakey; src: #greenScreen; color: 0.1 0.9 0.2" 
+            height="1.92" width="1.08"          
+        ></a-plane>
+      </a-marker>    
 
-      <a-nft
+      <!-- <a-nft
         type="nft"
         url="asset/imageTracking/dino"
         smooth="true"
@@ -122,8 +128,13 @@
               position="100 100 0"
         >
         </a-entity>
-      </a-nft>   
+      </a-nft> -->
+
+
+
+
       <a-entity camera></a-entity>
+
     </a-scene>
 
     <script type="text/javascript">
@@ -166,13 +177,13 @@
       // }); 
 
 
-      // let marker2Elem = document.getElementById("marker2");
-      // marker2Elem.addEventListener("markerFound", (e) => {
-      //   document.getElementById('greenScreen2').play();
-      //   document.getElementById('greenScreen3').play();
-      //   document.getElementById('greenScreen').play();
-      //   console.log("found");
-      // });
+      let marker2Elem = document.getElementById("marker2");
+      marker2Elem.addEventListener("markerFound", (e) => {
+        document.getElementById('greenScreen2').play();
+        document.getElementById('greenScreen3').play();
+        document.getElementById('greenScreen').play();
+        console.log("found");
+      });
   
     </script>
 
