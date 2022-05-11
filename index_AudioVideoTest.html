@@ -31,7 +31,11 @@
     </a-scene>
 
 
-    <div style='width: 200px;
+    <div 
+      id = 'startButton'
+      style='
+      position: absolute;
+      width: 200px;
       height: 100px;
       background-color: magenta;
       z-index: 9999;
@@ -70,6 +74,7 @@
       });
 
       function playVideoFunction(){
+        document.getElementById("startButton").style.visibility = "hidden";  
         var vid = document.querySelector('#dancingVideo');
         vid.play();
 
