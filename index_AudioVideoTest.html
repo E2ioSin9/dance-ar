@@ -9,7 +9,11 @@
   </head>
   <body>
 
-    <button onclick="playVideoFunction()"> </button>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+      <button>
+          Play Viedo
+      </button>
+    </div>
 
     <a-scene 
     renderer="logarithmicDepthBuffer: true;"
@@ -52,6 +56,14 @@
         var vid = document.querySelector('#video');
         if(isMarkerFound){
           vid.play();
+
+          // if(vid.paused){
+          //   vid.play();
+          // }
+          // else{
+          //   vid.pause();
+          // }
+
         }          
       }
   
