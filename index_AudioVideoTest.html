@@ -32,18 +32,17 @@
 
 
     <div style='width: 200px;
-    height: 100px;
-    position: absolute;
-    top: calc(50% - 300px);
-    left: calc(50% - 50px);
-    background-color: magenta;
-    z-index: 9999;
-    line-height: 100px;
-    text-align: center;
-    color: white;'>
+      height: 100px;
+      background-color: magenta;
+      z-index: 9999;
+      line-height: 100px;
+      text-align: center;
+      color: white;'>
+
       <button onclick="playVideoFunction()">
           Play Video
       </button>
+
     </div>
 
     
@@ -56,6 +55,10 @@
 
       marker2Elem.addEventListener("markerFound", (e) => {
         isMarkerFound = true;
+
+        var vid = document.querySelector('#dancingVideo');
+        vid.play();
+
       });
 
       marker2Elem.addEventListener("markerLost", (e) => {
@@ -63,13 +66,15 @@
 
         var vid = document.querySelector('#dancingVideo');
         vid.pause();
+        
       });
 
       function playVideoFunction(){
         var vid = document.querySelector('#dancingVideo');
+        vid.play();
 
-        if(isMarkerFound){
-          vid.play();
+        if(!isMarkerFound){
+          vid.pause();
         }       
       }
   
