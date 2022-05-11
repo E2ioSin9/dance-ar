@@ -37,7 +37,9 @@
 
       let marker2Elem = document.getElementById("marker");
       marker2Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('dancingVideo').play();
+        var vid = document.getElementById('dancingVideo')
+        vid.muted = false;
+        vid.play();
         console.log("found");
       });
   
