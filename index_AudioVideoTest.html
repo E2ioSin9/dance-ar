@@ -9,13 +9,10 @@
   </head>
   <body>
 
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-      <button>
-          Play Video
-      </button>
-    </div>
+    
 
-    <a-scene 
+    <div id="myEmbeddedScene">
+      <a-scene 
     renderer="logarithmicDepthBuffer: true;"
     embedded 
     arjs='sourceType: webcam;' 
@@ -37,6 +34,15 @@
       <a-entity camera></a-entity>
 
     </a-scene>
+    </div>
+
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+      <button>
+          Play Video
+      </button>
+    </div>
+
+    
 
     <script type="text/javascript">
 
