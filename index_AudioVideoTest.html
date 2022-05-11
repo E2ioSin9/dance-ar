@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene 
+    renderer="logarithmicDepthBuffer: true;"
+    embedded 
+    arjs='sourceType: webcam;' 
+    vr-mode-ui="enabled: false">
+      <a-assets>
+        <video id="dancingVideo" src="./asset/GreenScreenVideoAudioTest.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
+      </a-assets>
+
+      <a-marker id ="marker" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
+        <a-plane
+            rotation="-90 0 0"
+            position="0 0.2 0"
+            material="shader: chromakey; src: #dancingVideo; color: 0.1 0.9 0.2" 
+            width="1.92"
+            height="1.08"         
+        ></a-plane>
+
+      </a-marker>    
+
+
+      <a-entity camera></a-entity>
+
+    </a-scene>
+
+    <script type="text/javascript">
+
+      let marker2Elem = document.getElementById("marker");
+      marker2Elem.addEventListener("markerFound", (e) => {
+        document.getElementById('dancingVideo').play();
+        console.log("found");
+      });
+  
+    </script>
+    
+    </body>
+</html>
