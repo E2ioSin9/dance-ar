@@ -14,7 +14,7 @@
     arjs='sourceType: webcam;' 
     vr-mode-ui="enabled: false">
       <a-assets>
-        <video id="dancingVideo" src="./asset/GreenScreenVideoAudioTest.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
+        <video id="dancingVideo" src="./asset/GreenScreenVideoAudioTest.mp4" autoplay loop="true" playsinline webkit-playsinline></video>
       </a-assets>
 
       <a-marker id ="marker" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
@@ -36,10 +36,18 @@
     <script type="text/javascript">
 
       let marker2Elem = document.getElementById("marker");
+
       marker2Elem.addEventListener("markerFound", (e) => {
         var vid = document.getElementById('dancingVideo')
-        vid.muted = false;
+        //vid.muted = false;
         vid.play();
+        console.log("found");
+      });
+
+      marker2Elem.addEventListener("markerLost", (e) => {
+        var vid = document.getElementById('dancingVideo')
+        //vid.muted = false;
+        vid.pause();
         console.log("found");
       });
   
