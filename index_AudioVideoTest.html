@@ -8,6 +8,9 @@
     
   </head>
   <body>
+
+    <button onclick="playVideoFunction()"> </button>
+
     <a-scene 
     renderer="logarithmicDepthBuffer: true;"
     embedded 
@@ -25,9 +28,7 @@
             width="1.92"
             height="1.08"         
         ></a-plane>
-
-      </a-marker>    
-
+      </a-marker>   
 
       <a-entity camera></a-entity>
 
@@ -37,19 +38,22 @@
 
       let marker2Elem = document.getElementById("marker");
 
+      let isMarkerFound = false;
+
       marker2Elem.addEventListener("markerFound", (e) => {
-        var vid = document.getElementById('dancingVideo')
-        //vid.muted = false;
-        vid.play();
-        console.log("found");
+        isMarkerFound = true;
       });
 
       marker2Elem.addEventListener("markerLost", (e) => {
-        var vid = document.getElementById('dancingVideo')
-        //vid.muted = false;
-        vid.pause();
-        console.log("found");
+        isMarkerFound = false;
       });
+
+      playVideoFunction(){
+        var vid = document.querySelector('#video');
+        if(isMarkerFound){
+          vid.play();
+        }          
+      }
   
     </script>
     
