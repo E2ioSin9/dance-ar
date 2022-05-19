@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+     
+  </head>
+  <body>
+
+    <!-- <div 
+      id = 'startButton'
+      style='
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      top: calc(50% - 300px);
+      left: calc(50% - 50px);
+      background-color: magenta;
+      z-index: 9999;
+      line-height: 100px;
+      text-align: center;
+      color: white;'
+      > -->
+
+      <div 
+      id = 'startButton'
+      style='
+      opacity:0.8;
+      background-color:#ccc;
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0px;
+      left:0px;
+      z-index:1000;'
+      >
+      <h1>Start Scene</h1>
+      <button onclick="playVideoFunction()">
+          Start Scene
+      </button>
+
+    </div>
+
+    <a-scene 
+    renderer="logarithmicDepthBuffer: true;" 
+    embedded
+    arjs='sourceType: webcam;' 
+    vr-mode-ui="enabled: false">
+      <a-assets>
+        <video id="dancingVideo" src="./asset/GreenScreenVideoAudioTest.mp4" loop="true" playsinline webkit-playsinline></video>
+      </a-assets>
+
+      <a-marker id ="marker" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
+        <a-plane
+            rotation="-90 0 0"
+            position="0 0.2 0"
+            material="shader: chromakey; src: #dancingVideo; color: 0.1 0.9 0.2" 
+            width="1.92"
+            height="1.08"         
+        ></a-plane>
+      </a-marker>   
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    
+
+    <script type="text/javascript">
+
+      document.addEventListener('DOMContentLoaded', function() {
+          var scene = document.querySelector('a-scene');
+          scene.addEventListener('loaded', function (e) {
+            scene.style.visibility = "hidden";
+          });
+      });
+
+      let marker2Elem = document.getElementById("marker");
+
+      let isMarkerFound = false;
+
+      marker2Elem.addEventListener("markerFound", (e) => {
+        isMarkerFound = true;
+
+        var vid = document.querySelector('#dancingVideo');
+        vid.play();
+
+      });
+
+      marker2Elem.addEventListener("markerLost", (e) => {
+        isMarkerFound = false;
+
+        var vid = document.querySelector('#dancingVideo');
+        vid.pause();
+        
+      });
+
+      function StartScene(){
+        document.getElementById("startButton").style.visibility = "hidden";  
+        var scene = document.querySelector('a-scene');
+        scene.style.visibility = "visible";
+        var vid = document.querySelector('#dancingVideo');
+        vid.play();
+
+        if(!isMarkerFound){
+          vid.pause();
+        }       
+      }
+  
+    </script>
+    
+    </body>
+</html>
