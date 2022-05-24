@@ -66,10 +66,10 @@
     <script type="text/javascript">
 
       document.addEventListener('DOMContentLoaded', function() {
-          var scene = document.querySelector('a-scene');
-          scene.addEventListener('loaded', function (e) {
-            scene.style.visibility = "hidden";
-          });
+          //var scene = document.querySelector('a-scene');
+          //scene.addEventListener('loaded', function (e) {
+            //scene.style.visibility = "hidden";
+          //});
       });
 
       let marker2Elem = document.getElementById("marker");
@@ -94,8 +94,8 @@
 
       function StartScene(){
         document.getElementById("startButton").style.visibility = "hidden";  
-        var scene = document.querySelector('a-scene');
-        scene.style.visibility = "visible";
+        //var scene = document.querySelector('a-scene');
+        //scene.style.visibility = "visible";
         var vid = document.querySelector('#dancingVideo');
         vid.play();
         vid.pause();
