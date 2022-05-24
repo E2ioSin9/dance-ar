@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
@@ -75,6 +75,7 @@
           });
 
           var vid = document.querySelector('#dancingVideo');
+          vid.play();
           vid.pause();
       });
 
@@ -85,9 +86,14 @@
       marker2Elem.addEventListener("markerFound", (e) => {
         isMarkerFound = true;
 
-        var vid = document.querySelector('#dancingVideo');
-        vid.play();
+        var scene = document.querySelector('a-scene');
 
+        if(scene.style.visibility == "visible"){
+
+          var vid = document.querySelector('#dancingVideo');
+          vid.play();
+          
+        }
       });
 
       marker2Elem.addEventListener("markerLost", (e) => {
