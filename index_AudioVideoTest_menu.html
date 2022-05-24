@@ -33,7 +33,7 @@
       z-index:1000;'
       >
       <h1>Start Scene</h1>
-      <button onclick="playVideoFunction()">
+      <button onclick="StartScene()">
           Start Scene
       </button>
 
@@ -98,10 +98,11 @@
         scene.style.visibility = "visible";
         var vid = document.querySelector('#dancingVideo');
         vid.play();
+        vid.pause();
 
-        if(!isMarkerFound){
-          vid.pause();
-        }       
+        //if(!isMarkerFound){
+          //vid.pause();
+        //}       
       }
   
     </script>
