@@ -73,6 +73,9 @@
           scene.addEventListener('loaded', function (e) {
             scene.style.visibility = "hidden";
           });
+
+          var vid = document.querySelector('#dancingVideo');
+          vid.pause();
       });
 
       let marker2Elem = document.getElementById("marker");
