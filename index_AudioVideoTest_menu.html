@@ -1,6 +1,7 @@
 <html>
   <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="fade.css">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
@@ -27,7 +28,7 @@
       id = 'startButton'
       style='
       opacity:100%;
-      background-color:#ccc;
+      background-color:rgb(0, 153, 255);
       position:fixed;
       width:100%;
       height:100%;
@@ -70,13 +71,12 @@
 
       document.addEventListener('DOMContentLoaded', function() {
           var scene = document.querySelector('a-scene');
-          scene.addEventListener('loaded', function (e) {
-            scene.style.visibility = "hidden";
-          });
 
-          var vid = document.querySelector('#dancingVideo');
-          vid.play();
-          vid.pause();
+          scene.addEventListener('loaded', function (e) {
+
+            scene.style.visibility = "hidden";
+
+          });
       });
 
       let marker2Elem = document.getElementById("marker");
@@ -92,7 +92,7 @@
 
           var vid = document.querySelector('#dancingVideo');
           vid.play();
-          
+
         }
       });
 
@@ -105,7 +105,10 @@
       });
 
       function StartScene(){
-        document.getElementById("startButton").style.visibility = "hidden";  
+
+        //document.getElementById("startButton").style.visibility = "hidden"; 
+        document.getElementById("startButton").classList.add("fade-out");
+
         var scene = document.querySelector('a-scene');
         scene.style.visibility = "visible";
         var vid = document.querySelector('#dancingVideo');
@@ -116,6 +119,10 @@
           //vid.pause();
         //}       
       }
+
+      screen.addEventListener("orientationchange", function() {
+        window.location.reload();
+      });
   
     </script>
     
