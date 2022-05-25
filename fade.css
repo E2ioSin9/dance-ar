@@ -5,11 +5,11 @@
     -o-animation: fadeOut ease 2s;
     -ms-animation: fadeOut ease 2s;
 
-    /*animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;*/
+    -ms-animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
