@@ -40,6 +40,16 @@
         <video id="greenScreenTest" src="./asset/GreenScreenVideoAudioTest.mp4" muted autoplay loop="true" playsinline webkit-playsinline></video>
       </a-assets>
 
+      <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-arjs3-image-tracking.patt'>
+        <a-plane
+            rotation="-90 0 0"
+            position="0 0.2 0"
+            material="shader: chromakey; src: #dancingVideo; color: 0.1 0.9 0.2" 
+            width="1.92"
+            height="1.08"         
+        ></a-plane>
+      </a-marker>
+
       <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-Logo_Fanling.patt'>
         <a-plane
             rotation="-90 0 0"
