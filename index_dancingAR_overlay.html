@@ -35,10 +35,20 @@
     arjs='sourceType: webcam;' 
     vr-mode-ui="enabled: false">
       <a-assets>
-        <video id="dancingVideo" src="./asset/0503TestVideo.mp4"  autoplay loop="true" playsinline webkit-playsinline></video>
-        <video id="baseBallVideo" src="./asset/0511TestBaseBall Bat.mp4"  autoplay loop="true" playsinline webkit-playsinline></video>
-        <video id="greenScreenTest" src="./asset/GreenScreenVideoAudioTest.mp4"  autoplay loop="true" playsinline webkit-playsinline></video>
+        <video id="dancingVideo" src="./asset/0503TestVideo.mp4"  loop="true" playsinline webkit-playsinline></video>
+        <video id="baseBallVideo" src="./asset/0511TestBaseBall Bat.mp4"  loop="true" playsinline webkit-playsinline></video>
+        <video id="greenScreenTest" src="./asset/GreenScreenVideoAudioTest.mp4" loop="true" playsinline webkit-playsinline></video>
       </a-assets>
+
+      <a-marker id ="marker4" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
+        <a-plane
+            rotation="-90 0 0"
+            position="0 0.2 0"
+            material="shader: chromakey; src: #dancingVideo; color: 0.1 0.9 0.2" 
+            width="1.92"
+            height="1.08"         
+        ></a-plane>
+      </a-marker> 
 
       <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-Logo-Fanling.patt'>
         <a-plane
@@ -87,6 +97,7 @@
       let markerElem = document.getElementById("marker");
       let marker2Elem = document.getElementById("marker2");
       let marker3Elem = document.getElementById("marker3");
+      let marker4Elem = document.getElementById("marker4");
       
       markerElem.addEventListener("markerFound", (e) => {
         document.getElementById('dancingVideo').play();
@@ -112,6 +123,13 @@
 
       marker3Elem.addEventListener("markerLost", (e) => {
         document.getElementById('greenScreenTest').pause(); 
+      });
+
+      marker4Elem.addEventListener("markerFound", (e) => {
+        document.getElementById('dancingVideo').play();
+      });
+      marker4Elem.addEventListener("markerLost", (e) => {
+        document.getElementById('dancingVideo').pause();     
       });
 
       function StartScene(){
