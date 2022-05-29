@@ -40,7 +40,7 @@
         <video id="greenScreenTest" src="./asset/GreenScreenVideoAudioTest.mp4" loop="true" playsinline webkit-playsinline></video>
       </a-assets>
 
-      <a-marker id ="marker4" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
+      <!-- <a-marker id ="marker4" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
         <a-plane
             rotation="-90 0 0"
             position="0 0.2 0"
@@ -48,7 +48,7 @@
             width="1.92"
             height="1.08"         
         ></a-plane>
-      </a-marker> 
+      </a-marker>  -->
 
       <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-Logo-Fanling.patt'>
         <a-plane
@@ -125,12 +125,12 @@
         document.getElementById('greenScreenTest').pause(); 
       });
 
-      marker4Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('dancingVideo').play();
-      });
-      marker4Elem.addEventListener("markerLost", (e) => {
-        document.getElementById('dancingVideo').pause();     
-      });
+      // marker4Elem.addEventListener("markerFound", (e) => {
+      //   document.getElementById('dancingVideo').play();
+      // });
+      // marker4Elem.addEventListener("markerLost", (e) => {
+      //   document.getElementById('dancingVideo').pause();     
+      // });
 
       function StartScene(){
 
