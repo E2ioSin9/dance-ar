@@ -35,9 +35,9 @@
     arjs='sourceType: webcam;' 
     vr-mode-ui="enabled: false">
       <a-assets>
-        <video id="dancingVideo" src="./asset/0503TestVideo.mp4"  loop="true" playsinline webkit-playsinline></video>
-        <video id="baseBallVideo" src="./asset/0511TestBaseBall Bat.mp4"  loop="true" playsinline webkit-playsinline></video>
-        <video id="greenScreenTest" src="./asset/GreenScreenVideoAudioTest.mp4" loop="true" playsinline webkit-playsinline></video>
+        <video id="fanlingVideo" src="./asset/0531_Fanling.mp4"  loop="true" playsinline webkit-playsinline></video>
+        <video id="kwaiChungVideo" src="./asset/0531_KwaiChung.mp4"  loop="true" playsinline webkit-playsinline></video>
+        <video id="pengChauVideo" src="./asset/0531_PengChau.mp4" loop="true" playsinline webkit-playsinline></video>
       </a-assets>
 
       <!-- <a-marker id ="marker4" type='pattern' url='./asset/pattern-arjs3-image-tracking.patt'>
@@ -54,7 +54,7 @@
         <a-plane
             rotation="-90 0 0"
             position="0 0.2 0"
-            material="shader: chromakey; src: #dancingVideo; color: 0.1 0.9 0.2" 
+            material="shader: chromakey; src: #fanlingVideo; color: 0.1 0.9 0.2" 
             width="1.92"
             height="1.08"         
         ></a-plane>
@@ -64,7 +64,7 @@
         <a-plane
             rotation="-90 0 0"
             position="0 0.3 0"
-            material="shader: chromakey; src: #baseBallVideo; color: 0.1 0.9 0.2" 
+            material="shader: chromakey; src: #kwaiChungVideo; color: 0.1 0.9 0.2" 
             width="1.92"
             height="1.08"         
         ></a-plane>
@@ -74,7 +74,7 @@
         <a-plane
             rotation="-90 0 0"
             position="0 0.2 0"
-            material="shader: chromakey; src: #greenScreenTest; color: 0.1 0.9 0.2" 
+            material="shader: chromakey; src: #pengChauVideo; color: 0.1 0.9 0.2" 
             width="1.92"
             height="1.08"         
         ></a-plane>
@@ -100,29 +100,29 @@
       let marker4Elem = document.getElementById("marker4");
       
       markerElem.addEventListener("markerFound", (e) => {
-        document.getElementById('dancingVideo').play();
+        document.getElementById('fanlingVideo').play();
       });
 
       markerElem.addEventListener("markerLost", (e) => {
         //var vid = document.querySelector('#dancingVideo');
         //vid.pause();
-        document.getElementById('dancingVideo').pause();     
+        document.getElementById('fanlingVideo').pause();     
       });
 
       marker2Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('baseBallVideo').play();
+        document.getElementById('kwaiChungVideo').play();
       });
 
       marker2Elem.addEventListener("markerLost", (e) => {
-        document.getElementById('baseBallVideo').pause();
+        document.getElementById('kwaiChungVideo').pause();
       });
 
       marker3Elem.addEventListener("markerFound", (e) => {
-        document.getElementById('greenScreenTest').play();
+        document.getElementById('pengChauVideo').play();
       });
 
       marker3Elem.addEventListener("markerLost", (e) => {
-        document.getElementById('greenScreenTest').pause(); 
+        document.getElementById('pengChauVideo').pause(); 
       });
 
       // marker4Elem.addEventListener("markerFound", (e) => {
@@ -139,9 +139,9 @@
         var scene = document.querySelector('a-scene');
         scene.style.visibility = "visible";
 
-        var vid1 = document.querySelector('#dancingVideo');
-        var vid2 = document.querySelector('#baseBallVideo');
-        var vid3 = document.querySelector('#greenScreenTest');
+        var vid1 = document.querySelector('#fanlingVideo');
+        var vid2 = document.querySelector('#kwaiChungVideo');
+        var vid3 = document.querySelector('#pengChauVideo');
 
         vid1.play();
         vid1.pause();
