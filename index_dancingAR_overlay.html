@@ -50,17 +50,17 @@
         ></a-plane>
       </a-marker>  -->
        
-      <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-Logo-Fanling.patt' size = '0.25' smooth = 'true' smoothCount = '7'>
+      <a-marker id ="marker" type='pattern' url='./asset/marker/pattern-Logo-Fanling.patt' size = '0.25' smooth = 'true' smoothCount = '3' smoothTolerance = '0.05' smoothThreshold = '3'>
         <a-plane
             rotation="-90 0 0"
-            position="-4.5 0.2 0"
+            position="-2 0.2 0"
             material="shader: chromakey; src: #fanlingVideo; color: 0.1 0.9 0.2" 
             width="5.76"
             height="3.24"         
         ></a-plane>
       </a-marker>    
 
-      <a-marker id ="marker2" type='pattern' url='./asset/marker/pattern-Logo-KwaiChung.patt' size = '0.25' smooth = 'true' smoothCount = '7'>
+      <a-marker id ="marker2" type='pattern' url='./asset/marker/pattern-Logo-KwaiChung.patt' size = '0.25' smooth = 'true' smoothCount = '3' smoothTolerance = '0.05' smoothThreshold = '3'>
         <a-plane
             rotation="-90 0 0"
             position="0 0.3 -3"
@@ -70,10 +70,10 @@
         ></a-plane>
       </a-marker>  
 
-      <a-marker id ="marker3" type='pattern' url='./asset/marker/pattern-Logo-PengChau.patt' size = '0.25' smooth = 'true' smoothCount = '7'>
+      <a-marker id ="marker3" type='pattern' url='./asset/marker/pattern-Logo-PengChau.patt' size = '0.25' smooth = 'true' smoothCount = '3' smoothTolerance = '0.05' smoothThreshold = '3'>
         <a-plane
             rotation="-90 0 0"
-            position="-2.5 0.2 -1.5"
+            position="0 0.2 -2"
             material="shader: chromakey; src: #pengChauVideo; color: 0.1 0.9 0.2" 
             width="3.84"
             height="2.16"         
@@ -97,7 +97,6 @@
       let markerElem = document.getElementById("marker");
       let marker2Elem = document.getElementById("marker2");
       let marker3Elem = document.getElementById("marker3");
-      let marker4Elem = document.getElementById("marker4");
       
       markerElem.addEventListener("markerFound", (e) => {
         document.getElementById('fanlingVideo').play();
@@ -124,13 +123,6 @@
       marker3Elem.addEventListener("markerLost", (e) => {
         document.getElementById('pengChauVideo').pause(); 
       });
-
-      // marker4Elem.addEventListener("markerFound", (e) => {
-      //   document.getElementById('dancingVideo').play();
-      // });
-      // marker4Elem.addEventListener("markerLost", (e) => {
-      //   document.getElementById('dancingVideo').pause();     
-      // });
 
       function StartScene(){
 
